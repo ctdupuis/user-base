@@ -22,6 +22,13 @@ export class NewUserComponent implements OnInit {
     contactInfo: new FormGroup({
       number: new FormControl(''),
       email: new FormControl('')
+    }),
+    employHistory: new FormGroup({
+      employer: new FormControl(''),
+      manager: new FormControl(''),
+      currentJob: new FormControl(false),
+      startDate: new FormControl(''),
+      endDate: new FormControl('')
     })
   });
 

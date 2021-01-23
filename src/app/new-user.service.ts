@@ -11,7 +11,7 @@ export class NewUserService {
     console.log("Hey I got some users here")
   }
 
-  addUser(userdata) {
+  addUser(userdata: object) {
     console.log(userdata)
   }
 }
