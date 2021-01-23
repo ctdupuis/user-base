@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { usStates } from '../states';
 
 @Component({
   selector: 'app-new-user',
@@ -18,6 +19,7 @@ export class NewUserComponent implements OnInit {
     })
   });
 
+  statesArray = usStates
   constructor() { }
 
   ngOnInit(): void {
