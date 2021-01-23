@@ -18,6 +18,10 @@ export class NewUserComponent implements OnInit {
       city: new FormControl(''),
       state: new FormControl(''),
       zip: new FormControl('')
+    }),
+    contactInfo: new FormGroup({
+      number: new FormControl(''),
+      email: new FormControl('')
     })
   });
 

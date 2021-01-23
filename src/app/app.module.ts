@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NewUserComponent } from './new-user/new-user.component';
+import { NewUserService } from './new-user.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { NewUserComponent } from './new-user/new-user.component';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [NewUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
