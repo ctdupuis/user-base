@@ -3,12 +3,17 @@
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <label>
         First Name:
-        <input type="text" formControlName="firstName" />
+        <input type="text" formControlName="firstName">
     </label>
     
     <label>
         Last Name:
-        <input type="text" formControlName="lastName" />
+        <input type="text" formControlName="lastName">
+    </label>
+
+    <label>
+        Age:
+        <input type="number" formControlName="age">
     </label>
 
     <div formGroupName="address">
