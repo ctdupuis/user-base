@@ -8,6 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import { NewUserService } from './new-user.service';
 
+import { environment } from "src/environments/environment";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +21,9 @@ import { NewUserService } from './new-user.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [NewUserService],
   bootstrap: [AppComponent]
