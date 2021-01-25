@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { usStates } from '../states';
-import { NewUserService } from '../new-user.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-new-user',
@@ -33,15 +33,14 @@ export class NewUserComponent implements OnInit {
   });
 
   statesArray = usStates
-  constructor(private newUserService: NewUserService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
 
   }
 
   onSubmit() {
-    // console.warn(this.userForm.value)
-    this.newUserService.addUser(this.userForm.value);
+    this.userService.addUser(this.userForm.value);
   }
 
 }

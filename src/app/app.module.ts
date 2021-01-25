@@ -6,17 +6,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NewUserComponent } from './new-user/new-user.component';
-import { NewUserService } from './new-user.service';
+import { UserService } from './user.service';
 
 import { environment } from "src/environments/environment";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NewUserComponent
+    NewUserComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,7 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule
   ],
-  providers: [NewUserService],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

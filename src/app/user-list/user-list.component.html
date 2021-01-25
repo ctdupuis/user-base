@@ -1,0 +1,8 @@
+<p>user-list works!</p>
+
+<div *ngIf="users.length" class="users">
+    <li *ngFor="let user of users">
+        <span>{{user.firstName}} {{user.lastName}},</span>
+        <span>age {{user.age}}</span>
+    </li>
+</div>
