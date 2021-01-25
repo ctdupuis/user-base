@@ -10,6 +10,7 @@ export class NewUserService {
 
   getUsers() {
     console.log("Hey I got some users here")
+    return this.firestore.collection('users').snapshotChanges();
   }
 
   addUser(userdata: object) {

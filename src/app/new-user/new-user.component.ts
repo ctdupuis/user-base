@@ -20,7 +20,7 @@ export class NewUserComponent implements OnInit {
       zip: new FormControl('')
     }),
     contactInfo: new FormGroup({
-      number: new FormControl(''),
+      phone: new FormControl(''),
       email: new FormControl('')
     }),
     employHistory: new FormGroup({
