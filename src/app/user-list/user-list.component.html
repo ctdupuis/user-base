@@ -1,8 +1,18 @@
 <p>user-list works!</p>
 
-<div *ngIf="users.length" class="users">
-    <li *ngFor="let user of users">
-        <span>{{user.firstName}} {{user.lastName}},</span>
-        <span>age {{user.age}}</span>
-    </li>
-</div>
+<table *ngIf="users" class="user-table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.age}}</td>
+        </tr>
+    </tbody>
+</table>
