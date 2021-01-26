@@ -1,6 +1,6 @@
-<h2>Create a New User</h2>
-
 <form [formGroup]="userForm" #formDir="ngForm" (ngSubmit)="onSubmit()">
+
+    <h3>Personal Information</h3>
 
     <div class="form-group">
         <label for="firstName">
@@ -8,92 +8,116 @@
             <input type="text" id="firstName" formControlName="firstName" 
             class="form-control" required >
         </label>
-
     </div>
 
 
-    
-    <label>
-        Last Name:
-        <input type="text" formControlName="lastName" required>
-    </label>
+   <div class="form-group">       
+       <label for="lastName">
+           Last Name:
+           <input type="text" formControlName="lastName" required>
+       </label>
+   </div> 
 
-    <label>
-        Age:
-        <input type="number" formControlName="age" required>
-    </label>
+   <div class="form-group">
+       <label for="age">
+           Age:
+           <input type="number" formControlName="age" required>
+       </label>
+    </div> 
 
     <div formGroupName="address">
         <h3>Address</h3>
         
-        <label>
-            Street:
-            <input type="text" formControlName="street" required>
-        </label>
+        <div class="form-group">
+            <label for="street">
+                Street:
+                <input type="text" formControlName="street" required>
+            </label>
+        </div> 
         
-        <label>
-            City:
-            <input type="text" formControlName="city" required>
-        </label>
+        <div class="form-group">
+            <label for="city">
+                City:
+                <input type="text" formControlName="city" required>
+            </label>
+        </div> 
         
-        <label>
-            State:
-            <select formControlName="state" required>
-                <option>Select a state...</option>
-                <option *ngFor="let state of statesArray">{{state.abbreviation}}</option>
-            </select>
-        </label>
+        <div class="form-group">
+            <label for="state">
+                State:
+                <select formControlName="state" required>
+                    <option>Select a state...</option>
+                    <option *ngFor="let state of statesArray">{{state.abbreviation}}</option>
+                </select>
+            </label>
+        </div> 
         
-        <label>
-            Zip Code:
-            <input type="text" formControlName="zip" required>
-        </label>
+        <div class="form-group">
+            <label for="zip">
+                Zip Code:
+                <input type="text" formControlName="zip" required>
+            </label>
+        </div> 
     </div>
 
     <div formGroupName="contactInfo">
         <h3>Contact Information</h3>
 
-        <label>
-            Phone:
-            <input type="tel" formControlName="phone" required>
-        </label>
+        <div class="form-group">       
+            <label for="phone">
+                Phone:
+                <input type="tel" formControlName="phone" required>
+            </label>
+        </div> 
 
-        <label>
-            Email:
-            <input type="email" formControlName="email" required>
-        </label>
+        <div class="form-group">       
+            <label for="email">
+                Email:
+                <input type="email" formControlName="email" required>
+            </label>
+        </div> 
     </div>
 
     <div formGroupName="employHistory">
         <h3>Employment History</h3>
 
-        <label>
-            Employer:
-            <input type="text" formControlName="employer">
-        </label>
+        <div class="form-group">       
+            <label for="employer">
+                Employer:
+                <input type="text" formControlName="employer">
+            </label>
+        </div> 
 
-        <label>
-            Manager Name:
-            <input type="text" formControlName="manager">
-        </label>
+        <div class="form-group">       
+            <label for="manager">
+                Manager Name:
+                <input type="text" formControlName="manager">
+            </label>
+        </div> 
 
-        <label>
-            Start Date:
-            <input type="date" formControlName="startDate">
-        </label>
+        <div class="form-group">       
+            <label for="startDate">
+                Start Date:
+                <input type="date" formControlName="startDate">
+            </label>
+        </div> 
 
-        <label>
-            End Date:
-            <input type="date" formControlName="endDate">
-        </label>
+        <div class="form-group">       
+            <label for="endDate">
+                End Date:
+                <input type="date" formControlName="endDate">
+            </label>
+        </div> 
 
-        <label>
-            Is this your current job?
-            Yes
-            <input id="current-job" type="radio" value="Yes">
-            No
-            <input id="current-job" type="radio" value="No">
-        </label>
+        <div class="form-group">       
+            <label for="current-job">
+                Is this your current job?
+                Yes
+                <input id="current-job" type="radio" value="Yes">
+                No
+                <input id="current-job" type="radio" value="No">
+            </label>
+        </div> 
     </div>
 
     <button type="submit" [disabled]="userForm.invalid">Create</button>
