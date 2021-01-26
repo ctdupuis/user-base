@@ -1,19 +1,23 @@
 <h2>Create a New User</h2>
 
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-    <label>
-        First Name:
-        <input type="text" formControlName="firstName">
-    </label>
+<form [formGroup]="userForm" #formDir="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label for="firstName">
+            First Name:
+            <input type="text" id="firstName" formControlName="firstName" 
+            class="form-control" required >
+        </label>
+    </div>
     
     <label>
         Last Name:
-        <input type="text" formControlName="lastName">
+        <input type="text" formControlName="lastName" required>
     </label>
 
     <label>
         Age:
-        <input type="number" formControlName="age">
+        <input type="number" formControlName="age" required>
     </label>
 
     <div formGroupName="address">
@@ -21,17 +25,17 @@
         
         <label>
             Street:
-            <input type="text" formControlName="street">
+            <input type="text" formControlName="street" required>
         </label>
         
         <label>
             City:
-            <input type="text" formControlName="city">
+            <input type="text" formControlName="city" required>
         </label>
         
         <label>
             State:
-            <select formControlName="state">
+            <select formControlName="state" required>
                 <option>Select a state...</option>
                 <option *ngFor="let state of statesArray">{{state.abbreviation}}</option>
             </select>
@@ -39,7 +43,7 @@
         
         <label>
             Zip Code:
-            <input type="text" formControlName="zip">
+            <input type="text" formControlName="zip" required>
         </label>
     </div>
 
@@ -48,12 +52,12 @@
 
         <label>
             Phone:
-            <input type="tel" formControlName="phone">
+            <input type="tel" formControlName="phone" required>
         </label>
 
         <label>
             Email:
-            <input type="email" formControlName="email">
+            <input type="email" formControlName="email" required>
         </label>
     </div>
 
@@ -83,9 +87,9 @@
         <label>
             Is this your current job?
             Yes
-            <input id="current-job" type="radio" value="true">
+            <input id="current-job" type="radio" value="Yes">
             No
-            <input id="current-job" type="radio" value="false">
+            <input id="current-job" type="radio" value="No">
         </label>
     </div>
 

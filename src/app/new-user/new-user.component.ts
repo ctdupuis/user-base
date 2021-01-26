@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { usStates } from '../states';
 import { UserService } from '../user.service';
+import { User } from '../shared/models/user.model';
 
 @Component({
   selector: 'app-new-user',
@@ -10,9 +11,12 @@ import { UserService } from '../user.service';
 })
 export class NewUserComponent implements OnInit {
   userForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    age: new FormControl(''),
+    firstName: new FormControl('',
+    [Validators.required]),
+    lastName: new FormControl('',
+    [Validators.required]),
+    age: new FormControl('',
+    [Validators.required]),
     address: new FormGroup({
       street: new FormControl(''),
       city: new FormControl(''),
@@ -26,14 +30,15 @@ export class NewUserComponent implements OnInit {
     employHistory: new FormGroup({
       employer: new FormControl(''),
       manager: new FormControl(''),
-      currentJob: new FormControl(false),
+      currentJob: new FormControl(''),
       startDate: new FormControl(''),
       endDate: new FormControl('')
     })
   });
 
+  submitted = false;
   statesArray = usStates
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
 
@@ -41,6 +46,7 @@ export class NewUserComponent implements OnInit {
 
   onSubmit() {
     this.userService.addUser(this.userForm.value);
+    // debugger;
   }
 
 }
