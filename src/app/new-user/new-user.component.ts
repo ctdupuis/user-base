@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { usStates } from '../states';
-import { NewUserService } from '../new-user.service';
+import { UserService } from '../user.service';
+import { User } from '../shared/models/user.model';
 
 @Component({
   selector: 'app-new-user',
@@ -10,9 +11,12 @@ import { NewUserService } from '../new-user.service';
 })
 export class NewUserComponent implements OnInit {
   userForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    age: new FormControl(''),
+    firstName: new FormControl('',
+    [Validators.required]),
+    lastName: new FormControl('',
+    [Validators.required]),
+    age: new FormControl('',
+    [Validators.required]),
     address: new FormGroup({
       street: new FormControl(''),
       city: new FormControl(''),
@@ -20,28 +24,29 @@ export class NewUserComponent implements OnInit {
       zip: new FormControl('')
     }),
     contactInfo: new FormGroup({
-      number: new FormControl(''),
+      phone: new FormControl(''),
       email: new FormControl('')
     }),
     employHistory: new FormGroup({
       employer: new FormControl(''),
       manager: new FormControl(''),
-      currentJob: new FormControl(false),
+      currentJob: new FormControl(''),
       startDate: new FormControl(''),
       endDate: new FormControl('')
     })
   });
 
+  submitted = false;
   statesArray = usStates
-  constructor(private newUserService: NewUserService) { }
+  constructor(private userService: UserService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
 
   }
 
   onSubmit() {
-    // console.warn(this.userForm.value)
-    this.newUserService.addUser(this.userForm.value);
+    this.userService.addUser(this.userForm.value);
+    // debugger;
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NewUserService } from '../new-user.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +8,10 @@ import { NewUserService } from '../new-user.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private newUserService: NewUserService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.newUserService.getUsers();
+    this.userService.getUsers();
   }
 
 }
