@@ -1,0 +1,31 @@
+header {
+    background: blue;
+    padding: 10px;
+    h3 {
+        padding: 5px;
+        background: lightblue;
+    }
+}
+
+nav {
+    background: lightblue;
+    padding: 10px;
+    display: flex;
+    a {
+        text-decoration: none;
+    }
+}
+
+.nav-item {
+    background: lightgreen;
+    margin-left: 15px;
+    &:hover {
+        background: green;
+    }
+}
+
+
+
+.wrapper {
+    padding: 10px;
+}
