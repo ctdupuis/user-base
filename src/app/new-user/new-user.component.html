@@ -8,7 +8,10 @@
             <input type="text" id="firstName" formControlName="firstName" 
             class="form-control" required >
         </label>
+
     </div>
+
+
     
     <label>
         Last Name:
@@ -93,5 +96,5 @@
         </label>
     </div>
 
-    <button type="submit" >Create</button>
+    <button type="submit" [disabled]="userForm.invalid">Create</button>
 </form>
