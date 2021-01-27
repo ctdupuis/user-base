@@ -1,0 +1,20 @@
+.user-table {
+  margin: 1rem;
+  border-spacing: 1rem;
+}
+
+.user-table tr {
+  margin: 1rem;
+  border-bottom: 0.2rem solid black;
+}
+
+.user-table th {
+  margin: 0.5rem;
+  color: var(--m-green);
+  border-bottom: 0.1rem solid var(--d-green);
+}
+
+.user-table td {
+  margin: 0.5rem;
+  text-align: center;
+}
