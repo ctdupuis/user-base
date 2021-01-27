@@ -13,7 +13,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let user of users" (click)="openDetails()">
+            <tr *ngFor="let user of users" (click)="openDetails(user.id)">
                 <td>{{user.firstName}}</td>
                 <td>{{user.lastName}}</td>
                 <td>{{user.age}}</td>

@@ -15,14 +15,14 @@ export class UserListComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.getUsers()
-      .subscribe(users => {
-        this.users = users.map(u => {
-          return {
-            id: u.payload.doc.id,
-            ...u.payload.doc.data() as {}
-          } as User;
-        })
-      });
+    .subscribe(users => {
+      this.users = users.map(u => {
+        return {
+          id: u.payload.doc.id,
+          ...u.payload.doc.data() as {}
+        } as User;
+      })
+    });
   }
 
   openDetails = this.userService.openDetails

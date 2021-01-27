@@ -46,7 +46,7 @@ export class NewUserComponent implements OnInit {
 
   onSubmit() {
     this.userService.addUser(this.userForm.value);
-    // debugger;
+    this.userForm.reset()
   }
 
 }
