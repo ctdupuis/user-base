@@ -1,5 +1,12 @@
-<div class="modal-wrapper">
+<div class="modal-wrapper" id="modal">
     <div class="modal">
-        <p>Modal Div: {{user.firstName}} {{user.lastName}}</p>
+        <div class="modal-body">
+            <h3>{{user.firstName}} {{user.lastName}}
+                <button>X</button>
+            </h3>
+            <p>{{user.age}}</p>
+            
+        </div>
     </div>
+    <div class="modal-bg"></div>
 </div>
