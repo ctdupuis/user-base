@@ -23,13 +23,13 @@ export class UserService {
     })
   }
 
-  openDetails() {
+  openDetails(): void {
     document.getElementById('modal').style.display = 'block';
   }
 
-  closeDetails() {
-    // debugger
+  closeDetails(): void {
     document.getElementById('modal').style.display = 'none';
+    // debugger
   }
 
 }

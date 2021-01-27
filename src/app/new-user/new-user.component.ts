@@ -17,15 +17,15 @@ export class NewUserComponent implements OnInit {
     [Validators.required]),
     age: new FormControl('',
     [Validators.required]),
+    phone: new FormControl('',
+    [Validators.required]),
+    email: new FormControl('',
+    [Validators.required]),
     address: new FormGroup({
       street: new FormControl(''),
       city: new FormControl(''),
       state: new FormControl(''),
       zip: new FormControl('')
-    }),
-    contactInfo: new FormGroup({
-      phone: new FormControl(''),
-      email: new FormControl('')
     }),
     employHistory: new FormGroup({
       employer: new FormControl(''),
