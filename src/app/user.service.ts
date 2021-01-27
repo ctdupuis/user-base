@@ -23,4 +23,13 @@ export class UserService {
     })
   }
 
+  openDetails() {
+    document.getElementById('modal').style.display = 'block';
+  }
+
+  closeDetails() {
+    // debugger
+    document.getElementById('modal').style.display = 'none';
+  }
+
 }

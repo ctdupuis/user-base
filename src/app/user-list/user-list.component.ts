@@ -25,4 +25,6 @@ export class UserListComponent implements OnInit {
       });
   }
 
+  openDetails = this.userService.openDetails
+
 }
