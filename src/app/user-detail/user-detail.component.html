@@ -2,7 +2,7 @@
     <div class="modal">
         <div class="modal-body">
             <h3>{{user.firstName}} {{user.lastName}}, Age: {{user.age}}
-                <button (click)="closeDetails(user.id)">X</button>
+                <button (click)="closeDetails(user.id, $event)">X</button>
             </h3>
             <div class="contact">
                 <h4>Contact Information</h4>

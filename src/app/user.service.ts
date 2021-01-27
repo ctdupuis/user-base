@@ -24,12 +24,13 @@ export class UserService {
   }
 
   openDetails(id: string): void {
-    document.getElementById(`modal-${id}`).style.display = 'block';
+    document.getElementById(`modal-${id}`).style.display = "block";
   }
 
-  closeDetails(id: string): void {
-    document.getElementById(`modal-${id}`).style.removeProperty('display')
-    debugger
+  closeDetails(id: string, e: Event): void {
+    document.getElementById(`modal-${id}`).style.display = "none";
+    e.stopPropagation();
+    // debugger
   }
 
 }
