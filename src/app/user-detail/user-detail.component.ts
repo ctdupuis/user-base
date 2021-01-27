@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
 import { User } from '../shared/models/user.model';
 
 @Component({
@@ -10,10 +9,10 @@ import { User } from '../shared/models/user.model';
 export class UserDetailComponent implements OnInit {
 
   @Input() user: User;
-  constructor(private userService: UserService) { }
+  @Input() closeDetails
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  closeDetails = this.userService.closeDetails
 }
