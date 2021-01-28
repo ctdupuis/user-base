@@ -30,7 +30,6 @@ export class UserService {
   closeDetails(id: string, e: Event): void {
     document.getElementById(`modal-${id}`).style.display = "none";
     e.stopPropagation();
-    // debugger
   }
 
 }

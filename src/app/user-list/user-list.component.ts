@@ -12,6 +12,7 @@ export class UserListComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   users: User[]
+  searchText;
 
   ngOnInit(): void {
     this.userService.getUsers()
