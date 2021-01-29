@@ -24,7 +24,11 @@ export class UserService {
   }
 
   removeUser(userID: string) {
-    this.firestore.collection('users').doc(userID).delete();
+    return new Promise<any>((res, rej) => {
+      this.firestore
+      .collection('users')
+      .doc(userID).delete()
+    })
   }
 
   openDetails(id: string): void {

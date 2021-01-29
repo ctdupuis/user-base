@@ -37,7 +37,7 @@ export class NewUserComponent implements OnInit {
   });
 
   submitted = false;
-  statesArray = usStates
+  statesArray = usStates;
   constructor(private userService: UserService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -46,7 +46,7 @@ export class NewUserComponent implements OnInit {
 
   onSubmit() {
     this.userService.addUser(this.userForm.value);
-    this.userForm.reset()
+    this.userForm.reset();
   }
 
 }
