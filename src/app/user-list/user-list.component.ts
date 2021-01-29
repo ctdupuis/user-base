@@ -28,5 +28,6 @@ export class UserListComponent implements OnInit {
 
   openDetails = this.userService.openDetails
   closeDetails = this.userService.closeDetails
+  removeUser = this.userService.removeUser
 
 }

@@ -10,6 +10,7 @@ export class UserDetailComponent implements OnInit {
 
   @Input() user: User;
   @Input() closeDetails
+  @Input() removeUser
   constructor() { }
 
   ngOnInit(): void {

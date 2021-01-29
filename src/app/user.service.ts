@@ -23,6 +23,10 @@ export class UserService {
     })
   }
 
+  removeUser(userID: string) {
+    this.firestore.collection('users').doc(userID).delete();
+  }
+
   openDetails(id: string): void {
     document.getElementById(`modal-${id}`).style.display = "block";
   }
