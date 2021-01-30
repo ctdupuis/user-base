@@ -2,19 +2,21 @@
     <div class="modal">
         <div class="modal-body">
             <h3>{{user.firstName}} {{user.lastName}}, Age: {{user.age}}
-                <button (click)="closeDetails(user.id, $event)">X</button>
+                <button id="x" (click)="closeDetails(user.id, $event)">X</button>
             </h3>
-            <div class="contact">
-                <h4>Contact Information</h4>
-                <p>Phone: {{user.phone}}</p>
-                <p>Email: {{user.email}}</p>
+            <div class="flex-container">
+                <div class="contact">
+                    <h4>Contact Information</h4>
+                    <p>Phone: {{user.phone}}</p>
+                    <p>Email: {{user.email}}</p>
+                </div>
+                <div class="address">
+                    <h4>Address</h4>
+                    <p>{{user.address.street}}</p>
+                    <p>{{user.address.city}}, {{user.address.state}} {{user.address.zip}}</p>
+                </div>    
             </div>
-            <div class="address">
-                <h4>Address</h4>
-                <p>{{user.address.street}}</p>
-                <p>{{user.address.city}}, {{user.address.state}} {{user.address.zip}}</p>
-            </div>    
-            <button (click)="this.userService.removeUser(user.id)">Delete</button> 
+            <button id="delete" (click)="this.userService.removeUser(user.id)">Delete User</button> 
         </div>
     </div>
     <div class="modal-bg"></div>

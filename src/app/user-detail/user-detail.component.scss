@@ -1,3 +1,5 @@
+@import '../app.component.scss';
+
 .modal-wrapper {
     display: none;
 }
@@ -24,10 +26,53 @@
 }
 
 .modal-body {
-    margin: 60px;
+    margin: 4em 20em;
     background: #fff;
+    border-radius: 10px;
     h3 {
-        background: purple;
+        background: $soc-yellow;
         padding: 10px;
+        border-radius: 10px 10px 0 0;
+    }
+}
+
+#x {
+    float: right;
+    border: none;
+    width: 5%;
+    background-color: red;
+    transition: 0.2s;
+    color: white;
+    padding: 3px;
+    border-radius: 10px;
+    &:hover {
+        background: darkred;
+        cursor: pointer;
+    }
+}
+
+.flex-container {
+    display: flex;
+    padding: 10px;
+    justify-content: space-evenly;
+    div {
+        margin: 10px;
+        h4, p {
+            margin-top: 10px;
+        }
+    }
+}
+
+#delete {
+    margin-bottom: 8px;
+    background-color: red;
+    color: white;
+    padding: 6px;
+    border-radius: 10px;
+    border: none;
+    transition: 0.2s;
+    &:hover {
+        background: darkred;
+        cursor: pointer;
     }
 }
