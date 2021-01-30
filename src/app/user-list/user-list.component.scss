@@ -1,21 +1,36 @@
 @import '../app.component.scss';
 
-table {
+#users {
     text-align: center;
     width: 100%;
-    border-spacing: 1rem;
+    border-spacing: 0 1rem;
+    border-collapse: collapse;
 }
 
-tr {
-    margin-top: 10rem;
-    :hover{
-        background: $soc-blue;
-        transition: 0.5s;
-    }
+#users td, #users th {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
 }
 
-th {
-    border-bottom: 1px solid black;
+#users tr:nth-child(even){
+    background-color: $soc-blue3;
+}
+
+#users tr:nth-child(odd){
+    background-color: $soc-blue2;
+}
+
+#users tr:hover {
+    background-color: $soc-blue4;
+    transition: 0.2s;
+}
+
+#users th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: $soc-blue;
+    color: white;
 }
 
 label {
@@ -23,9 +38,14 @@ label {
 }
 
 #search-text {
-    border-radius: 5px;
+    border-radius: 50px;
     border: none;
-    background: lightblue;
-    padding: 5px;
+    background: lightgrey;
+    padding: 6px 6px 6px 10px;
     margin: 10px;
+    outline: none;
+    transition: 0.2s;
+    &:focus {
+        background-color: #ddd;
+    }
 }
