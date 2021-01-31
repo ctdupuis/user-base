@@ -57,7 +57,11 @@
     justify-content: space-evenly;
     div {
         margin: 10px;
-        h4, p {
+        h4 {
+            margin-top: 10px;
+            border-bottom: 1px solid black;
+        }
+        p {
             margin-top: 10px;
         }
     }

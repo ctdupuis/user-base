@@ -1,3 +1,52 @@
+@import '../app.component.scss';
+
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.fieldset {
+    border: 1px solid $soc-green;
+    background-color: $soc-green2;
+    border-radius: 10px;
+    h3 {
+        background-color: $soc-green;
+        padding: 5px;
+        border-radius: 10px 10px 0 0;
+    }
+}
+
 .form-group {
     margin: 10px;
+    input, select {
+        padding: 5px 5px 5px 7px;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+        color: $soc-green;
+    }
+}
+
+.btn-container {
+    text-align: center;
+    margin-top: 1rem;
+    button {
+        background-color: $soc-green2;
+        color: white;
+        transition: 0.2s;
+        border-radius: 10px;
+        padding: 7px;
+        &:hover{
+            background-color: $soc-green;
+            cursor: pointer;
+        }
+    }
+    button:disabled, button[disabled] {
+        border: 1px solid #999999;
+        background-color: #cccccc;
+        color: #666666;
+        &:hover {
+            cursor: auto;
+        }
+    }
 }

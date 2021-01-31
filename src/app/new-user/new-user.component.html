@@ -1,125 +1,133 @@
 <div class="form-container">
 
-    <form [formGroup]="userForm" #formDir="ngForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="userForm" id="new-user" #formDir="ngForm" (ngSubmit)="onSubmit()">
+        <div class="flex-container">
+
+            <div class="fieldset">
+                <h3>Personal Information</h3>
+            
+                <div class="form-group">
+                    <label for="firstName">
+                        First Name:
+                        <input type="text" id="firstName" formControlName="firstName" 
+                        class="form-control" required >
+                    </label>
+                </div>
+            
+            
+               <div class="form-group">       
+                   <label for="lastName">
+                       Last Name:
+                       <input type="text" formControlName="lastName" required>
+                   </label>
+                </div> 
+                
+                <div class="form-group">
+                    <label for="age">
+                        Age:
+                        <input type="number" formControlName="age" required>
+                    </label>
+                </div> 
+                <div class="form-group">       
+                    <label for="phone">
+                        Phone:
+                        <input type="tel" formControlName="phone" required>
+                    </label>
+                </div> 
+            
+                <div class="form-group">       
+                    <label for="email">
+                        Email:
+                        <input type="email" formControlName="email" required>
+                    </label>
+                </div> 
+            </div>
     
-        <h3>Personal Information</h3>
-    
-        <div class="form-group">
-            <label for="firstName">
-                First Name:
-                <input type="text" id="firstName" formControlName="firstName" 
-                class="form-control" required >
-            </label>
+            <div class="fieldset">
+                <div formGroupName="address">
+                    <h3>Address</h3>
+                    
+                    <div class="form-group">
+                        <label for="street">
+                            Street:
+                            <input type="text" formControlName="street" required>
+                        </label>
+                    </div> 
+                    
+                    <div class="form-group">
+                        <label for="city">
+                            City:
+                            <input type="text" formControlName="city" required>
+                        </label>
+                    </div> 
+                    
+                    <div class="form-group">
+                        <label for="state">
+                            State:
+                            <select formControlName="state" required>
+                                <option>Select a state...</option>
+                                <option *ngFor="let state of statesArray">{{state.abbreviation}}</option>
+                            </select>
+                        </label>
+                    </div> 
+                    
+                    <div class="form-group">
+                        <label for="zip">
+                            Zip Code:
+                            <input type="text" formControlName="zip" required>
+                        </label>
+                    </div> 
+                </div>
+            </div>
+            
+        
+            <div class="fieldset">
+                <div formGroupName="employHistory">
+                    <h3>Employment History</h3>
+            
+                    <div class="form-group">       
+                        <label for="employer">
+                            Employer:
+                            <input type="text" formControlName="employer">
+                        </label>
+                    </div> 
+            
+                    <div class="form-group">       
+                        <label for="manager">
+                            Manager Name:
+                            <input type="text" formControlName="manager">
+                        </label>
+                    </div> 
+            
+                    <div class="form-group">       
+                        <label for="startDate">
+                            Start Date:
+                            <input type="date" formControlName="startDate">
+                        </label>
+                    </div> 
+            
+                    <div class="form-group">       
+                        <label for="endDate">
+                            End Date:
+                            <input type="date" formControlName="endDate">
+                        </label>
+                    </div> 
+            
+                    <div class="form-group">       
+                        <label for="current-job">
+                            Is this your current job?
+                            Yes
+                            <input id="current-job" type="radio" value="Yes">
+                            No
+                            <input id="current-job" type="radio" value="No">
+                        </label>
+                    </div> 
+                </div>
+            </div>
         </div>
     
-    
-       <div class="form-group">       
-           <label for="lastName">
-               Last Name:
-               <input type="text" formControlName="lastName" required>
-           </label>
-       </div> 
-    
-       <div class="form-group">
-           <label for="age">
-               Age:
-               <input type="number" formControlName="age" required>
-           </label>
-        </div> 
-    
-        <div formGroupName="address">
-            <h3>Address</h3>
-            
-            <div class="form-group">
-                <label for="street">
-                    Street:
-                    <input type="text" formControlName="street" required>
-                </label>
-            </div> 
-            
-            <div class="form-group">
-                <label for="city">
-                    City:
-                    <input type="text" formControlName="city" required>
-                </label>
-            </div> 
-            
-            <div class="form-group">
-                <label for="state">
-                    State:
-                    <select formControlName="state" required>
-                        <option>Select a state...</option>
-                        <option *ngFor="let state of statesArray">{{state.abbreviation}}</option>
-                    </select>
-                </label>
-            </div> 
-            
-            <div class="form-group">
-                <label for="zip">
-                    Zip Code:
-                    <input type="text" formControlName="zip" required>
-                </label>
-            </div> 
+        <div class="btn-container">
+            <button type="submit" [disabled]="userForm.invalid">Create User</button>
         </div>
-    
-        <h3>Contact Information</h3>
-    
-        <div class="form-group">       
-            <label for="phone">
-                Phone:
-                <input type="tel" formControlName="phone" required>
-            </label>
-        </div> 
-    
-        <div class="form-group">       
-            <label for="email">
-                Email:
-                <input type="email" formControlName="email" required>
-            </label>
-        </div> 
-    
-        <div formGroupName="employHistory">
-            <h3>Employment History</h3>
-    
-            <div class="form-group">       
-                <label for="employer">
-                    Employer:
-                    <input type="text" formControlName="employer">
-                </label>
-            </div> 
-    
-            <div class="form-group">       
-                <label for="manager">
-                    Manager Name:
-                    <input type="text" formControlName="manager">
-                </label>
-            </div> 
-    
-            <div class="form-group">       
-                <label for="startDate">
-                    Start Date:
-                    <input type="date" formControlName="startDate">
-                </label>
-            </div> 
-    
-            <div class="form-group">       
-                <label for="endDate">
-                    End Date:
-                    <input type="date" formControlName="endDate">
-                </label>
-            </div> 
-    
-            <div class="form-group">       
-                <label for="current-job">
-                    Is this your current job?
-                    Yes
-                    <input id="current-job" type="radio" value="Yes">
-                    No
-                    <input id="current-job" type="radio" value="No">
-                </label>
-            </div> 
-        </div>
-    
-        <button type="submit" [disabled]="userForm.invalid">Create</button>
     </form>
 </div>
