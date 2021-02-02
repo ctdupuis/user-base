@@ -16,6 +16,13 @@
                     <p>{{user.address.city}}, {{user.address.state}} {{user.address.zip}}</p>
                 </div>    
             </div>
+            <div class="flex-container" >
+                <div class="employHistory">
+                    <h4>Employment History</h4>
+                    <p><strong>Company:</strong> {{user.employHistory.employer}}</p>
+                    <p><strong>Supervisor:</strong> {{user.employHistory.manager}}</p>
+                </div>
+            </div>
             <button id="delete" (click)="this.userService.removeUser(user.id)">Delete User</button> 
         </div>
     </div>
