@@ -25,7 +25,8 @@ export class NewUserComponent implements OnInit {
       street: new FormControl(''),
       city: new FormControl(''),
       state: new FormControl(''),
-      zip: new FormControl('')
+      zip: new FormControl('',
+      [Validators.required, Validators.maxLength(5)])
     }),
     employHistory: new FormGroup({
       employer: new FormControl(''),
@@ -38,6 +39,7 @@ export class NewUserComponent implements OnInit {
 
   submitted = false;
   statesArray = usStates;
+  user: User;
   constructor(private userService: UserService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
