@@ -31,14 +31,15 @@
     text-align: center;
     margin-top: 1rem;
     button {
-        background-color: $soc-green2;
+        background-color: $soc-green;
         color: white;
         transition: 0.2s;
         border-radius: 10px;
         padding: 7px;
         &:hover{
-            background-color: $soc-green;
+            background-color: $soc-green3;
             cursor: pointer;
+            color: black;
         }
     }
     button:disabled, button[disabled] {

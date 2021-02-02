@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "user-base-302616"
+  },
+  "targets": {
+    "user-base-302616": {
+      "hosting": {
+        "user-base": [
+          "user-base-302616"
+        ]
+      }
+    }
+  }
+}
