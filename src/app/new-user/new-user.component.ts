@@ -29,11 +29,16 @@ export class NewUserComponent implements OnInit {
       [Validators.required, Validators.maxLength(5)])
     }),
     employHistory: new FormGroup({
-      employer: new FormControl(''),
-      manager: new FormControl(''),
-      currentJob: new FormControl(''),
-      startDate: new FormControl(''),
-      endDate: new FormControl('')
+      employer: new FormControl('',
+      [Validators.required]),
+      manager: new FormControl('',
+      [Validators.required]),
+      currentJob: new FormControl('',
+      [Validators.required]),
+      startDate: new FormControl('',
+      [Validators.required]),
+      endDate: new FormControl('',
+      [Validators.required])
     })
   });
 
