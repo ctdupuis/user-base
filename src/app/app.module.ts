@@ -14,6 +14,9 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
