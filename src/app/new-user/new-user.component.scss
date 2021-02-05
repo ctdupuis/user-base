@@ -33,14 +33,13 @@
     margin-top: 1rem;
     button {
         background-color: $soc-green;
-        color: white;
         transition: 0.2s;
         border-radius: 10px;
         padding: 7px;
+        outline: none;
         &:hover{
             background-color: $soc-green3;
             cursor: pointer;
-            color: black;
         }
     }
     button:disabled, button[disabled] {
