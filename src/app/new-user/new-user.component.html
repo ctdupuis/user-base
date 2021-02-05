@@ -79,52 +79,94 @@
                     </div> 
                 </div>
             </div>
+        </div>
             
-        
-            <div class="fieldset">
-                <div formGroupName="employHistory">
-                    <h3>Employment History</h3>
-            
-                    <div class="form-group">       
-                        <label for="employer">
-                            Employer:
-                            <input type="text" formControlName="employer">
-                        </label>
-                    </div> 
-            
-                    <div class="form-group">       
-                        <label for="manager">
-                            Manager Name:
-                            <input type="text" formControlName="manager">
-                        </label>
-                    </div> 
-            
-                    <div class="form-group">       
-                        <label for="startDate">
-                            Start Date:
-                            <input type="date" formControlName="startDate">
-                        </label>
-                    </div> 
-            
-                    <div class="form-group">       
-                        <label for="endDate">
-                            End Date:
-                            <input type="date" formControlName="endDate">
-                        </label>
-                    </div> 
-            
-                    <div class="form-group">       
-                        <label for="current-job">
-                            Is this your current job?
-                            Yes
-                            <input id="current-job" type="radio" value="Yes">
-                            No
-                            <input id="current-job" type="radio" value="No">
-                        </label>
-                    </div> 
+            <div class="flex-container">
+
+                <div class="fieldset">
+                    <div formArrayName="employHistory">
+                        <h3>Employment History</h3>
+                
+                        <!-- <div *ngFor="let _ of employHistory.controls; index as i">
+                            <div class="form-group" [formGroupName]="i">
+                                <label for="employer">
+                                    Employer:
+                                    <input formControlName="employer">
+                                </label>
+                            </div>
+                            <div class="form-group">       
+                                <label for="manager">
+                                    Manager Name:
+                                    <input type="text" formControlName="manager">
+                                </label>
+                            </div> 
+                    
+                            <div class="form-group">       
+                                <label for="startDate">
+                                    Start Date:
+                                    <input type="date" formControlName="startDate">
+                                </label>
+                            </div> 
+                    
+                            <div class="form-group">       
+                                <label for="endDate">
+                                    End Date:
+                                    <input type="date" formControlName="endDate">
+                                </label>
+                            </div> 
+                    
+                            <div class="form-group">       
+                                <label for="current-job">
+                                    Is this your current job?
+                                    Yes
+                                    <input id="current-job" type="radio" value="Yes">
+                                    No
+                                    <input id="current-job" type="radio" value="No">
+                                </label>
+                            </div> 
+                        </div> -->
+                        <div class="form-group">       
+                            <label for="employer">
+                                Employer:
+                                <input type="text" formControlName="employer">
+                            </label>
+                        </div> 
+                        
+                        <div class="form-group">       
+                            <label for="manager">
+                                Manager Name:
+                                <input type="text" formControlName="manager">
+                            </label>
+                        </div> 
+                
+                        <div class="form-group">       
+                            <label for="startDate">
+                                Start Date:
+                                <input type="date" formControlName="startDate">
+                            </label>
+                        </div> 
+                
+                        <div class="form-group">       
+                            <label for="endDate">
+                                End Date:
+                                <input type="date" formControlName="endDate">
+                            </label>
+                        </div> 
+                
+                        <div class="form-group">       
+                            <label for="current-job">
+                                Is this your current job?
+                                Yes
+                                <input id="current-job" type="radio" value="Yes">
+                                No
+                                <input id="current-job" type="radio" value="No">
+                            </label>
+                        </div> 
+                    </div>
                 </div>
             </div>
-        </div>
+
+
     
         <div class="btn-container">
             <button type="submit" [disabled]="userForm.invalid">Create User</button>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { usStates } from '../states';
 import { UserService } from '../user.service';
 import { User } from '../shared/models/user.model';
@@ -40,7 +40,16 @@ export class NewUserComponent implements OnInit {
       endDate: new FormControl('',
       [Validators.required])
     })
+    // employHistory: new FormArray([
+    //   new FormGroup({
+    //     employer: new FormControl('', [Validators.required]),
+    //     manager: new FormControl('', [Validators.required]),
+    //     startDate: new FormControl('', [Validators.required]),
+    //     endDate: new FormControl('', [Validators.required])
+    //   })
+    // ])
   });
+  employHistory = this.userForm.get('employHistory') as FormArray;
 
   submitted = false;
   statesArray = usStates;
@@ -54,6 +63,17 @@ export class NewUserComponent implements OnInit {
   onSubmit() {
     this.userService.addUser(this.userForm.value);
     this.userForm.reset();
+  }
+
+  addEmployer() {
+    const employer = new FormGroup({
+      employer: new FormControl('', [Validators.required]),
+      manager: new FormControl('', [Validators.required]),
+      startDate: new FormControl('', [Validators.required]),
+      endDate: new FormControl('', [Validators.required])
+    })
+
+    this.employHistory.push(employer)
   }
 
 }
