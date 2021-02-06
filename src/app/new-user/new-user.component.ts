@@ -28,18 +28,6 @@ export class NewUserComponent implements OnInit {
       zip: new FormControl('',
       [Validators.required, Validators.maxLength(5)])
     }),
-    // employHistory: new FormGroup({
-    //   employer: new FormControl('',
-    //   [Validators.required]),
-    //   manager: new FormControl('',
-    //   [Validators.required]),
-    //   currentJob: new FormControl('',
-    //   [Validators.required]),
-    //   startDate: new FormControl('',
-    //   [Validators.required]),
-    //   endDate: new FormControl('',
-    //   [Validators.required])
-    // })
     employHistory: new FormArray([
       new FormGroup({
         employer: new FormControl('', [Validators.required]),
