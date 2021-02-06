@@ -19,7 +19,7 @@
                 <td>{{user.firstName}}</td>
                 <td>{{user.lastName}}</td>
                 <td>{{user.age}}</td>
-                <td>{{user.phone}}</td>
+                <td>{{user.phone | mask: '(000) 000-0000'}}</td>
                 <td>{{user.email}}</td>
                 <app-user-detail 
                 [user]="user"
