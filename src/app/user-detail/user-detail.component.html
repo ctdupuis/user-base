@@ -16,15 +16,16 @@
                     <p>{{user.address.city}}, {{user.address.state}} {{user.address.zip}}</p>
                 </div>    
             </div>
-            <div class="flex-container" *ngIf="(user.employHistory.manager !== '')">
+            <!-- <div class="flex-container" *ngIf="(user.employHistory.manager !== '')">
                 <div class="employHistory">
                     <h4>Employment History</h4>
                     <p><strong>Company:</strong> {{user.employHistory.employer}}</p>
                     <p><strong>Supervisor:</strong> {{user.employHistory.manager}}</p>
                 </div>
-            </div>
-            <div class="flex-container" *ngFor="let history of user.employHistory">
-                <div class="employHistory">
+            </div> -->
+            <h4>Employment History</h4>
+            <div class="flex-container-vert" >
+                <div class="employHistory" *ngFor="let history of user.employHistory">
                     <p><strong>Company:</strong> {{history.employer}}</p>
                     <p><strong>Supervisor:</strong> {{history.manager}}</p>
                     <p>{{history.startDate}} - {{history.endDate}}</p>

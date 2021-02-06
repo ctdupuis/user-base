@@ -56,6 +56,35 @@
     display: flex;
     padding: 10px;
     justify-content: space-evenly;
+    h4 {
+        margin-top: 10px;
+        border-bottom: 1px solid lightgrey;
+    }
+    div {
+        margin: 10px;
+        h4 {
+            margin-top: 10px;
+            border-bottom: 1px solid lightgrey;
+        }
+        p {
+            margin-top: 10px;
+        }
+    }
+}
+
+h4 {
+    margin-top: 10px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.flex-container-vert {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    h4 {
+        margin-top: 10px;
+        border-bottom: 1px solid black;
+    }
     div {
         margin: 10px;
         h4 {
