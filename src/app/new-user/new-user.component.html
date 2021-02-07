@@ -1,4 +1,5 @@
 <div class="form-container">
+    <app-messages></app-messages>
 
     <form [formGroup]="userForm" id="new-user" (ngSubmit)="onSubmit()">
         <div class="flex-container">
@@ -139,5 +140,5 @@
             <button type="submit" [disabled]="userForm.invalid">Create User</button>
         </div>
     </form>
-    <app-messages></app-messages>
+
 </div>
