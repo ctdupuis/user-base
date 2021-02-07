@@ -1,5 +1,6 @@
 import { EmployHistory } from './employHistory.model';
 import { Address } from './address.model';
+import { getLocaleDateFormat } from '@angular/common';
 
 export class User {
     id: string;
@@ -11,3 +12,4 @@ export class User {
     address: Address;
     employHistory: EmployHistory;
 }
+

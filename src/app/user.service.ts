@@ -31,6 +31,7 @@ export class UserService {
       this.firestore
       .collection('users')
       .doc(userID).delete()
+      this.messagesService.addMessage("User successfully deleted!")
     })
   }
 
