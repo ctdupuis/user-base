@@ -24,9 +24,9 @@
                     <p>{{history.startDate}} - {{history.endDate}}</p>
                 </div>
             </div>
-            <div class="flex-container" *ngIf="(user.employHistory.manager === '')">
+            <!-- <div class="flex-container" *ngIf="!user.employHistory.length">
                 <h4>This user has no recorded employment history</h4>
-            </div>
+            </div> -->
             <button id="delete" (click)="this.userService.removeUser(user.id)">Delete User</button> 
         </div>
     </div>
