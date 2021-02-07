@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable, Subscriber } from 'rxjs';
+import { MessagesService } from './messages.service';
 import { User } from './shared/models/user.model';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { User } from './shared/models/user.model';
 })
 export class UserService {
 
-  constructor(private firestore: AngularFirestore) { }
+  constructor(private firestore: AngularFirestore, private messagesService: MessagesService) { }
 
   getUsers(){
     return this.firestore.collection('users').snapshotChanges();
@@ -20,6 +21,8 @@ export class UserService {
       .collection('users')
       .add(user)
       .then(res => {}, err => reject(err))
+      this.messagesService.addMessage("User succesfully created!")
+      setTimeout(this.messagesService.clear, 5000)
     })
   }
 

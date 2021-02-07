@@ -15,6 +15,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { MessagesComponent } from './messages/messages.component';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -24,7 +25,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     HomeComponent,
     NewUserComponent,
     UserListComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

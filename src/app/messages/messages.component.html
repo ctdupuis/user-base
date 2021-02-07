@@ -1,0 +1,5 @@
+<div *ngIf="messageService.messages.length">
+    <ul *ngFor='let message of messageService.messages'> 
+        <li>{{message}}</li>
+    </ul>
+</div>
