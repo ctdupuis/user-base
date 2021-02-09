@@ -19,5 +19,11 @@ export class UserDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public dateFormat(date: string) {
+    const splitDate = date.split("-")
+    // debugger
+    return `${splitDate[1]}/${splitDate[2]}/${splitDate[0]}`
+  }
+
   isEditing: false;
 }

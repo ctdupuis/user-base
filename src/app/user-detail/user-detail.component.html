@@ -21,7 +21,7 @@
                 <div class="employHistory" *ngFor="let history of user.employHistory">
                     <p><strong>Company:</strong> {{history.employer}}</p>
                     <p><strong>Supervisor:</strong> {{history.manager}}</p>
-                    <p>{{history.startDate}} - {{history.endDate}}</p>
+                    <p>{{dateFormat(history.startDate)}} - {{dateFormat(history.endDate)}}</p>
                 </div>
             </div>
             <!-- <div class="flex-container" *ngIf="!user.employHistory.length">
