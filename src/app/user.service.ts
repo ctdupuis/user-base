@@ -22,7 +22,6 @@ export class UserService {
       .add(user)
       .then(res => {}, err => reject(err))
       this.messagesService.addMessage("User succesfully created!")
-      setTimeout(this.messagesService.clear, 5000)
     })
   }
 
