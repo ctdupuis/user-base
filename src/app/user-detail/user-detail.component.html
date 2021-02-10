@@ -4,29 +4,57 @@
             <h3>{{user.firstName}} {{user.lastName}}, Age: {{user.age}}
                 <button id="x" (click)="closeDetails(user.id, $event)">X</button>
             </h3>
-            <div class="flex-container">
-                <div class="contact">
-                    <h4>Contact Information</h4>
-                    <p><strong>Phone:</strong> {{user.phone | mask: '(000) 000-0000'}}</p>
-                    <p><strong>Email:</strong> {{user.email}}</p>
+            <button *ngIf="!isEditing" (click)="isEditing = !isEditing">Edit</button>
+            <button *ngIf="isEditing">Save Changes</button>
+            <button *ngIf="isEditing" (click)="isEditing = !isEditing">Cancel</button>
+            <div *ngIf="!isEditing">
+                <div class="flex-container">
+                    <div class="contact">
+                        <h4>Contact Information</h4>
+                        <p><strong>Phone:</strong> {{user.phone | mask: '(000) 000-0000'}}</p>
+                        <p><strong>Email:</strong> {{user.email}}</p>
+                    </div>
+                    <div class="address">
+                        <h4>Address</h4>
+                        <p>{{user.address.street}}</p>
+                        <p>{{user.address.city}}, {{user.address.state}} {{user.address.zip}}</p>
+                    </div>    
                 </div>
-                <div class="address">
-                    <h4>Address</h4>
-                    <p>{{user.address.street}}</p>
-                    <p>{{user.address.city}}, {{user.address.state}} {{user.address.zip}}</p>
-                </div>    
-            </div>
-            <h4>Employment History</h4>
-            <div class="flex-container-vert" >
-                <div class="employHistory" *ngFor="let history of user.employHistory">
-                    <p><strong>Company:</strong> {{history.employer}}</p>
-                    <p><strong>Supervisor:</strong> {{history.manager}}</p>
-                    <p>{{dateFormat(history.startDate)}} - {{dateFormat(history.endDate)}}</p>
+                <h4>Employment History</h4>
+                <div class="flex-container-vert" >
+                    <div class="employHistory" *ngFor="let history of user.employHistory">
+                        <p><strong>Company:</strong> {{history.employer}}</p>
+                        <p><strong>Supervisor:</strong> {{history.manager}}</p>
+                        <p>{{dateFormat(history.startDate)}} - {{dateFormat(history.endDate)}}</p>
+                    </div>
                 </div>
             </div>
-            <!-- <div class="flex-container" *ngIf="!user.employHistory.length">
-                <h4>This user has no recorded employment history</h4>
-            </div> -->
+
+            <div *ngIf="isEditing">
+                <form id="edit-form">
+                    <div class="flex-container">
+
+                        <div class="contact">
+                            <h4>Contact Information</h4>
+                            <p><strong>Phone:</strong><input type="tel" mask="(000) 000-0000"></p>
+                            <p><strong>Email:</strong><input type="email"></p>
+                        </div>
+                        <div class="address">
+                            <h4>Address</h4>
+                            <p>{{user.address.street}}</p>
+                            <p>{{user.address.city}}, {{user.address.state}} {{user.address.zip}}</p>
+                        </div>    
+                    </div>
+                    <h4>Employment History</h4>
+                    <div class="flex-container-vert" >
+                        <div class="employHistory" *ngFor="let history of user.employHistory">
+                            <p><strong>Company:</strong> {{history.employer}}</p>
+                            <p><strong>Supervisor:</strong> {{history.manager}}</p>
+                            <p>{{dateFormat(history.startDate)}} - {{dateFormat(history.endDate)}}</p>
+                        </div>
+                    </div>
+            </form>
+            </div>
             <button id="delete" (click)="this.userService.removeUser(user.id)">Delete User</button> 
         </div>
     </div>

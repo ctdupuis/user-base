@@ -53,6 +53,10 @@ export class NewUserComponent implements OnInit {
     this.userForm.reset();
   }
 
+  adjustEndDate() {
+    
+  }
+
   addEmployer() {
     const employer = new FormGroup({
       employer: new FormControl('', [Validators.required]),
