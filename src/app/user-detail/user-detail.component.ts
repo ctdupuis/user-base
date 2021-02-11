@@ -42,6 +42,17 @@ export class UserDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addEmployer() {
+    const employer = new FormGroup({
+      employer: new FormControl('', [Validators.required]),
+      manager: new FormControl('', [Validators.required]),
+      startDate: new FormControl('', [Validators.required]),
+      endDate: new FormControl('', [Validators.required])
+    })
+
+    this.employHistory.push(employer)
+  }
+  
   onSubmit() {
     console.log(this.editForm.value)
   }
