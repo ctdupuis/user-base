@@ -4,10 +4,10 @@
             <h3>{{user.firstName}} {{user.lastName}}, Age: {{user.age}}
                 <button id="x" (click)="closeDetails(user.id, $event)">X</button>
             </h3>
-            <button *ngIf="!isEditing" (click)="isEditing = !isEditing">Edit</button>
+            <button *ngIf="!isEditing" (click)="toggleEdit()">Edit</button>
 
-            <button *ngIf="isEditing" form="edit-form">Save Changes</button>
-            <button *ngIf="isEditing" (click)="isEditing = !isEditing">Cancel</button>
+            <button *ngIf="isEditing" form="edit-form" type="submit">Save Changes</button>
+            <button *ngIf="isEditing" (click)="toggleEdit()">Cancel</button>
 
             <div *ngIf="!isEditing">
                 <div class="flex-container">
@@ -33,30 +33,33 @@
             </div>
 
             <div *ngIf="isEditing">
-                <form id="edit-form" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+                <form id="edit-form" [formGroup]="editForm" (ngSubmit)="onSubmit(user.id)">
+                    <input type="hidden" formControlName="id" name="id" value="{{user.id}}">
+                    <input type="hidden" formControlName="firstName" value="{{user.firstName}}">
+
                     <div class="flex-container">
                         <div class="contact">
                             <h4>Contact Information</h4>
                             <div class="form-group">
                                 <label>Phone</label>
-                                <input formControlName="phone" type="tel" mask="(000) 000-0000">
+                                <input formControlName="phone" placeholder="{{user.phone | mask: '(000) 000-0000'}}" type="tel" mask="(000) 000-0000">
                             </div>
 
                             <div class="form-group">
                                 <label>Email</label>
-                                <input formControlName="email" type="email">
+                                <input formControlName="email" placeholder="{{user.email}}" type="email">
                             </div>
                         </div>
                         <div class="address" formGroupName="address">
                             <h4>Address</h4>
                             <div class="form-group">
                                 <label>Street</label>
-                                <input type="text" formControlName="street" required>
+                                <input type="text" placeholder="{{user.address.street}}" formControlName="street" required>
                             </div>
                                
                             <div class="form-group">
                                 <label>City</label>
-                                <input type="text" formControlName="city" required>
+                                <input type="text" placeholder="{{user.address.city}}" formControlName="city" required>
                             </div>
 
                             <div class="form-group">
@@ -69,7 +72,7 @@
 
                             <div class="form-group">
                                 <label>Zip Code</label>
-                                <input type="text" formControlName="zip" required>
+                                <input type="text" placeholder="{{user.address.zip}}" formControlName="zip" required>
                             </div>
                         </div>    
                     </div>
@@ -105,6 +108,7 @@
                     </div>
                 </form>
             </div>
+
             <button id="delete" (click)="this.userService.removeUser(user.id)">Delete User</button> 
         </div>
     </div>

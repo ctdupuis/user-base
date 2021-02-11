@@ -11,6 +11,8 @@ import { usStates } from '../states';
 })
 export class UserDetailComponent implements OnInit {
   editForm = new FormGroup({
+    id: new FormControl(''),
+    firstName: new FormControl(''),
     phone: new FormControl('',
     [Validators.required]),
     email: new FormControl('',
@@ -56,7 +58,11 @@ export class UserDetailComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.editForm.value)
+    // console.log(this.editForm.value)
+    // debugger
+    const userID = this.editForm.value.id
+    this.userService.updateUser(userID, this.editForm.value)
+    this.toggleEdit()
   }
 
   public dateFormat(date: string) {
@@ -65,4 +71,6 @@ export class UserDetailComponent implements OnInit {
   }
 
   isEditing:boolean = false;
+
+  toggleEdit() { this.isEditing = !this.isEditing }
 }

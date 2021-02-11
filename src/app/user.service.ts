@@ -21,7 +21,7 @@ export class UserService {
       .collection('users')
       .add(user)
       .then(res => {}, err => reject(err))
-      this.messagesService.addMessage("User succesfully created!")
+      this.messagesService.addMessage("User succesfully created")
     })
   }
 
@@ -30,7 +30,17 @@ export class UserService {
       this.firestore
       .collection('users')
       .doc(userID).delete()
-      this.messagesService.addMessage("User successfully deleted!")
+      this.messagesService.addMessage("User successfully deleted")
+    })
+  }
+
+  updateUser(userID: string, user: User) {
+    debugger
+    return new Promise<any>((res, rej) => {
+      this.firestore
+      .collection('users')
+      .doc(user.id).update(user)
+      this.messagesService.addMessage("User information successfully updated")
     })
   }
 
