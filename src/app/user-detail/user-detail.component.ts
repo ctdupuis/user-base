@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { User } from '../shared/models/user.model';
 import { UserService } from '../user.service';
+import { usStates } from '../states';
 
 @Component({
   selector: 'app-user-detail',
@@ -36,6 +37,7 @@ export class UserDetailComponent implements OnInit {
   @Input() user: User;
   @Input() closeDetails;
 
+  statesArray = usStates;
 
   constructor(public userService: UserService) { }
 
@@ -52,7 +54,7 @@ export class UserDetailComponent implements OnInit {
 
     this.employHistory.push(employer)
   }
-  
+
   onSubmit() {
     console.log(this.editForm.value)
   }

@@ -37,8 +37,15 @@
                     <div class="flex-container">
                         <div class="contact">
                             <h4>Contact Information</h4>
-                            <p><strong>Phone:</strong><input formControlName="phone" type="tel" mask="(000) 000-0000"></p>
-                            <p><strong>Email:</strong><input formControlName="email" type="email"></p>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input formControlName="phone" type="tel" mask="(000) 000-0000">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input formControlName="email" type="email">
+                            </div>
                         </div>
                         <div class="address" formGroupName="address">
                             <h4>Address</h4>
@@ -54,7 +61,10 @@
 
                             <div class="form-group">
                                 <label>State</label>
-                                <input type="text" formControlName="state" required>
+                                <select formControlName="state" required>
+                                    <option>Select a state...</option>
+                                    <option *ngFor="let state of statesArray">{{state.abbreviation}}</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
