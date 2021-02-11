@@ -42,6 +42,10 @@ export class UserDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    console.log(this.editForm.value)
+  }
+
   public dateFormat(date: string) {
     const splitDate = date.split("-")
     return `${splitDate[1]}/${splitDate[2]}/${splitDate[0]}`
