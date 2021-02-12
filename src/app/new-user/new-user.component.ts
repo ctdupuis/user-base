@@ -53,13 +53,25 @@ export class NewUserComponent implements OnInit {
     this.userForm.reset();
   }
 
+  dateFormat(date) {
+    const value = date.split("/")
+    return `${value[2]}-${value[0]}-${value[1]}`
+  }
+
   checkboxEvent(e: Event) {
     const input = document.getElementById('endDate') as HTMLInputElement
     const target = e.target as HTMLInputElement
+    const date = new Date().toLocaleDateString("en", {
+      year: "numeric",
+      month: "2-digit",
+      day: "numeric"
+    })
     if (target.checked) {
       input.disabled = true
+      input.value = this.dateFormat(date)
     } else {
       input.disabled = false
+      input.value = ""
     }
   }
 
