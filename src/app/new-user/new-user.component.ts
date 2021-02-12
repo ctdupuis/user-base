@@ -53,7 +53,7 @@ export class NewUserComponent implements OnInit {
     this.userForm.reset();
   }
 
-  dateFormat(date) {
+  private dateFormat(date: string) {
     const value = date.split("/")
     return `${value[2]}-${value[0]}-${value[1]}`
   }
@@ -84,6 +84,10 @@ export class NewUserComponent implements OnInit {
     })
 
     this.employHistory.push(employer)
+  }
+
+  removeEmployer() {
+    this.employHistory.removeAt(-1)
   }
 
 }
