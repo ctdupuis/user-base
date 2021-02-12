@@ -97,7 +97,7 @@ h4 {
     }
 }
 
-#delete {
+.delete {
     margin-bottom: 8px;
     background-color: red;
     color: white;
@@ -108,5 +108,59 @@ h4 {
     &:hover {
         background: darkred;
         cursor: pointer;
+    }
+}
+
+.edit {
+    margin-bottom: 8px;
+    background-color: $soc-green;
+    color: white;
+    padding: 6px;
+    border-radius: 10px;
+    border: none;
+    transition: 0.2s;
+    &:hover {
+        background-color: rgba($soc-green, 0.75);
+        cursor: pointer;
+    }
+    &:disabled, &[disabled] {
+        border: 1px solid #999999;
+        background-color: #cccccc;
+        color: #666666;
+        &:hover {
+            cursor: auto;
+        }
+    }
+}
+
+
+button {
+    margin-right: 5px;
+}
+
+input, select {
+    margin-left: 2px;
+    border-radius: 50px;
+    border: none;
+    background: lightgrey;
+    padding: 6px 6px 6px 10px;
+    outline: none;
+    transition: 0.2s;
+    &:focus {
+        background-color: #ddd;
+    }
+}
+
+a {
+    background: $soc-green;
+    border-radius: 10px;
+    padding: 7px;
+    border: 1px solid #999999;
+    transition: 0.2s;
+    font-size: .8em;
+    color: white;
+    &:hover {
+        cursor: pointer;
+        background-color: $soc-green3;
     }
 }

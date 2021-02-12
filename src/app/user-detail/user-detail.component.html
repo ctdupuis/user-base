@@ -4,17 +4,17 @@
             <h3>{{user.firstName}} {{user.lastName}}, Age: {{user.age}}
                 <button id="x" (click)="closeDetails(user.id, $event)">X</button>
             </h3>
-            <button *ngIf="!isEditing" (click)="toggleEdit()">Edit</button>
+            <button *ngIf="!isEditing" class="edit" (click)="toggleEdit()">Edit</button>
 
-            <button *ngIf="isEditing" form="edit-form" type="submit">Save Changes</button>
-            <button *ngIf="isEditing" (click)="toggleEdit()">Cancel</button>
+            <button *ngIf="isEditing" class="edit" [disabled]="editForm.invalid" form="edit-form" type="submit">Save Changes</button>
+            <button *ngIf="isEditing" class="delete" (click)="toggleEdit()">Cancel</button>
 
             <div *ngIf="!isEditing">
                 <div class="flex-container">
                     <div class="contact">
                         <h4>Contact Information</h4>
-                        <p><strong>Phone:</strong> {{user.phone | mask: '(000) 000-0000'}}</p>
-                        <p><strong>Email:</strong> {{user.email}}</p>
+                        <p>{{user.phone | mask: '(000) 000-0000'}}</p>
+                        <p>{{user.email}}</p>
                     </div>
                     <div class="address">
                         <h4>Address</h4>
@@ -34,9 +34,6 @@
 
             <div *ngIf="isEditing">
                 <form id="edit-form" [formGroup]="editForm" (ngSubmit)="onSubmit(user.id)">
-                    <input type="hidden" formControlName="id" name="id" value="{{user.id}}">
-                    <input type="hidden" formControlName="firstName" value="{{user.firstName}}">
-
                     <div class="flex-container">
                         <div class="contact">
                             <h4>Contact Information</h4>
@@ -109,7 +106,7 @@
                 </form>
             </div>
 
-            <button id="delete" (click)="this.userService.removeUser(user.id)">Delete User</button> 
+            <button class="delete" (click)="this.userService.removeUser(user.id)">Delete User</button> 
         </div>
     </div>
     <div class="modal-bg"></div>

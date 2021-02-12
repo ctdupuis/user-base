@@ -56,7 +56,6 @@ export class UserDetailComponent implements OnInit {
   }
 
   onSubmit() {
-    // debugger
     const userID = this.user.id
     this.userService.updateUser(userID, this.editForm.value)
     this.toggleEdit()

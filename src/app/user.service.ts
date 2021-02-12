@@ -35,7 +35,6 @@ export class UserService {
   }
 
   updateUser(userID: string, user: User) {
-    debugger
     return new Promise<any>((res, rej) => {
       this.firestore
       .collection('users')
