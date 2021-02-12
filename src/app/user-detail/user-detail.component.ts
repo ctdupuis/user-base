@@ -44,6 +44,10 @@ export class UserDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  removeUser(userID: string) {
+    if (window.confirm("Are you sure? This action is irreversible.")) { this.userService.removeUser(userID) }
+  }
+
   addEmployer() {
     const employer = new FormGroup({
       employer: new FormControl('', [Validators.required]),
