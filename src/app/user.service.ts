@@ -39,7 +39,7 @@ export class UserService {
     return new Promise<any>((res, rej) => {
       this.firestore
       .collection('users')
-      .doc(user.id).update(user)
+      .doc(userID).update(user)
       this.messagesService.addMessage("User information successfully updated")
     })
   }
