@@ -53,6 +53,16 @@ export class NewUserComponent implements OnInit {
     this.userForm.reset();
   }
 
+  checkboxEvent(e: Event) {
+    const input = document.getElementById('endDate') as HTMLInputElement
+    const target = e.target as HTMLInputElement
+    if (target.checked) {
+      input.disabled = true
+    } else {
+      input.disabled = false
+    }
+  }
+
   addEmployer() {
     const employer = new FormGroup({
       employer: new FormControl('', [Validators.required]),
