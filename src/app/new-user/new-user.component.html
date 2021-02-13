@@ -15,7 +15,6 @@
                     </label>
                 </div>
             
-            
                <div class="form-group">       
                    <label for="lastName">
                        Last Name:
@@ -29,6 +28,7 @@
                         <input type="number" formControlName="age" required>
                     </label>
                 </div> 
+                
                 <div class="form-group">       
                     <label for="phone">
                         Phone:
@@ -112,14 +112,7 @@
                     <div class="form-group">       
                         <label for="endDate">
                             End Date:
-                            <input type="date" id="endDate" formControlName="endDate">
-                        </label>
-                    </div> 
-            
-                    <div class="form-group">       
-                        <label for="current-job">
-                            Current Place of Employment
-                            <input id="current-job" (click)="checkboxEvent($event)" type="checkbox" value="true">
+                            <input type="date" formControlName="endDate">
                         </label>
                     </div> 
 

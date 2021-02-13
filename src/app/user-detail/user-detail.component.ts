@@ -65,31 +65,10 @@ export class UserDetailComponent implements OnInit {
     this.toggleEdit()
   }
 
-  checkboxEvent(e: Event) {
-    const input = document.getElementById('endDate') as HTMLInputElement
-    const target = e.target as HTMLInputElement
-    const date = new Date().toLocaleDateString("en", {
-      year: "numeric",
-      month: "2-digit",
-      day: "numeric"
-    })
-    if (target.checked) {
-      input.disabled = true
-      input.value = this.inputFormat(date)
-    } else {
-      input.disabled = false
-      input.value = ""
-    }
-  }
 
   public dateFormat(date: string) {
     const splitDate = date.split("-")
     return `${splitDate[1]}/${splitDate[2]}/${splitDate[0]}`
-  }
-
-  private inputFormat(date: string) {
-    const value = date.split("/")
-    return `${value[2]}-${value[0]}-${value[1]}`
   }
 
   isEditing:boolean = false;
