@@ -1,27 +1,25 @@
 # UserBase
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.0.
+This is a simple project about creating and storing users in a table. Click [here](https://user-base-302616.web.app/home) to see the live demonstration.
 
-## Development server
+## Tech Stack
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Angular 9
+* Firebase
+* Firestore
 
-## Code scaffolding
+## Functionality
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Create, Read, Update, and Delete user data
+* Search for users in the table
+* Click on a user's table to display a popup window with additional information
 
-## Build
+## Credits
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+This project was built soley by [myself](https://linkedin.com/in/cody-dupuis). However, it definitely wouldn't have been possible to do without a few different blog posts that helped me out along the way. Listed below are some resources that were detrimental to helping me learn Angular and Firebase/Firestore.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* [Angular Documentation](https://angular.io/docs)
+* [Form Validations (Also in the Documentation)](https://www.codingame.com/playgrounds/8012/angular-form-validation-example-tutorial)
+* [Displaying Modals](https://jasonwatmore.com/post/2020/09/24/angular-10-custom-modal-window-dialog-box)
+* [NPM Search Package](https://www.npmjs.com/package/ng2-search-filter)
+* [Application Deployment](https://blog.logrocket.com/deploy-angular-9-apps-to-firebase-hosting/)
